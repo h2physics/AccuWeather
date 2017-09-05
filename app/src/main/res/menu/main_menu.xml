@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_refresh"
+        android:title="@string/action_refresh"
+        android:orderInCategory="10"/>
+
+    <item
+        android:id="@+id/action_map"
+        android:title="@string/action_map"
+        android:orderInCategory="10"/>
+
+    <item
+        android:id="@+id/action_setting"
+        android:title="@string/action_setting"
+        android:orderInCategory="10"/>
+
+</menu>

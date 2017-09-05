@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditTextPreference
+        android:title="@string/pref_title_location"
+        android:key="@string/pref_key_location"
+        android:defaultValue="@string/pref_default_location"
+        android:inputType="number"
+        android:singleLine="true"/>
+
+    <ListPreference
+        android:title="@string/pref_title_temperature"
+        android:key="@string/pref_key_temperature"
+        android:entries="@array/pref_option_label"
+        android:entryValues="@array/pref_option_value"
+        android:defaultValue="@string/pref_key_celsius"/>
+</PreferenceScreen>
