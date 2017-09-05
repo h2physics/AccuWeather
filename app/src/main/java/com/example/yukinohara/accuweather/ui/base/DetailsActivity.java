@@ -9,6 +9,7 @@ import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -22,6 +23,7 @@ import com.squareup.picasso.Picasso;
 import org.w3c.dom.Text;
 
 public class DetailsActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor>{
+    private static final String LOG_TAG = DetailsActivity.class.getSimpleName();
     ActivityDetailsBinding mBinding;
     int position;
     TextView mHumidityTv;
@@ -39,7 +41,8 @@ public class DetailsActivity extends AppCompatActivity implements LoaderManager.
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_details);
 
         Intent getIntent = this.getIntent();
-        position = getIntent.getIntExtra("EXTRA", 0);
+        position = getIntent.getIntExtra("INDEX", 0);
+        Log.e(LOG_TAG, "Position: " + position);
 
         ViewGroup humidity = (ViewGroup) findViewById(R.id.humidity);
         mHumidityTv = (TextView) humidity.findViewById(R.id.content_weather_tv);
@@ -106,6 +109,8 @@ public class DetailsActivity extends AppCompatActivity implements LoaderManager.
             String morningTemp = data.getString(MainActivity.INDEX_WEATHER_MORNING_TEMPERATURE);
             String nightTemp = data.getString(MainActivity.INDEX_WEATHER_NIGHT_TEMPERATURE);
             String dayTemp = data.getString(MainActivity.INDEX_WEATHER_DAY_TEMPERATURE);
+
+            Log.e(LOG_TAG, "Pressure: " + pressure);
 
             if (main.equalsIgnoreCase(getString(R.string.clear))){
                 Picasso.with(this)

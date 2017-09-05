@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity implements ForecastAdapter.O
 
     @Override
     public void onClick(int position) {
-        Log.e("Position", position + "");
+//        Log.e("Position", position + "");
         Intent intent = new Intent(this, DetailsActivity.class);
         intent.putExtra("INDEX", position);
         startActivity(intent);
